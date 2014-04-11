@@ -1,14 +1,10 @@
 package com.workshare.msnos.core_client;
 
+import com.workshare.msnos.core_client.commands.*;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.workshare.msnos.core_client.commands.ExitCommand;
-import com.workshare.msnos.core_client.commands.JoinCommand;
-import com.workshare.msnos.core_client.commands.StatusCommand;
-import com.workshare.msnos.core_client.commands.InvalidCommand;
-import com.workshare.msnos.core_client.commands.LogLevelControlCommand;
 
 public class Main {
 
@@ -22,7 +18,7 @@ public class Main {
 		new InvalidCommand(),
 		new StatusCommand(),
 		new JoinCommand(),
-//		new LeaveCommand(),
+		new LeaveCommand(),
 //		new DiscoverCommand(),
 		new LogLevelControlCommand(),
 		new ExitCommand(),
