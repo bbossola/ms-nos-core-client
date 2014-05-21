@@ -12,6 +12,6 @@ public class LeaveCommand implements Command {
 
     @Override
     public void execute() throws Exception {
-        Bootstrap.agent().leave(Bootstrap.grid());
+        Bootstrap.agent().leave();
     }
 }
