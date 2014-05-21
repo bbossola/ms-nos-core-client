@@ -21,7 +21,7 @@ public class StatusCommand implements Command {
         final Cloud grid = Bootstrap.grid();
 
         System.out.println();
-        System.out.println("  " + "Whoami: " + JoinCommand.me);
+        System.out.println("  " + "Whoami: " + Bootstrap.agent());
 
         try {
             final Collection<LocalAgent> agents = grid.getLocalAgents();

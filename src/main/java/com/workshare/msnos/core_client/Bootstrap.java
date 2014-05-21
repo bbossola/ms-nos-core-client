@@ -16,7 +16,7 @@ public class Bootstrap {
         return cloud;
     }
 
-    public static Agent agent() throws IOException {
+    public static LocalAgent agent() throws IOException {
         return agent;
     }
 
