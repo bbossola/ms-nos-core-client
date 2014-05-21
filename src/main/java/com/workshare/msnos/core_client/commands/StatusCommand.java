@@ -2,6 +2,7 @@ package com.workshare.msnos.core_client.commands;
 
 import com.workshare.msnos.core.Agent;
 import com.workshare.msnos.core.Cloud;
+import com.workshare.msnos.core.LocalAgent;
 import com.workshare.msnos.core.RemoteAgent;
 import com.workshare.msnos.core_client.Bootstrap;
 import com.workshare.msnos.core_client.Command;
@@ -23,7 +24,7 @@ public class StatusCommand implements Command {
         System.out.println("  " + "Whoami: " + JoinCommand.me);
 
         try {
-            final Collection<Agent> agents = grid.getLocalAgents();
+            final Collection<LocalAgent> agents = grid.getLocalAgents();
             System.out.println("  " + "Agents: " + agents.size());
             for (Agent agent : agents) {
                 System.out.println("    " + agent);
