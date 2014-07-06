@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class Main {
 
     static {
-        LogLevelControlCommand.setCurrentLevel(Level.WARNING);
+        LogLevelControlCommand.setCurrentLevel(Level.INFO);
     }
 
     private static final Logger logger = Logger.getLogger("com.gridprobe");
@@ -38,8 +38,7 @@ public class Main {
             try {
                 command().execute();
             } catch (Exception ex) {
-                System.err.println("Error: " + ex.getMessage());
-                logger.log(Level.INFO, "An error occured!", ex);
+                logger.log(Level.WARNING, "An error occured!", ex);
             }
 
             sleep(500L);
