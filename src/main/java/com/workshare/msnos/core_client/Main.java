@@ -34,7 +34,6 @@ public class Main {
 
         while (true) {
             showMenu();
-
             try {
                 command().execute();
             } catch (Exception ex) {
