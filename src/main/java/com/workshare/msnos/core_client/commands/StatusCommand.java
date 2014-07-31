@@ -22,6 +22,7 @@ public class StatusCommand implements Command {
 
         System.out.println();
         System.out.println("  " + "Whoami: " + Bootstrap.agent());
+        System.out.println("  " + "Networks: " + Bootstrap.agent().getHosts() + "\n");
 
         try {
             final Collection<LocalAgent> agents = grid.getLocalAgents();
