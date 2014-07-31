@@ -23,10 +23,10 @@ public class Bootstrap {
 
     public static void init() throws IOException {
         
-        String signkey = getSecurityKey();
-        if (signkey != null) {
-            Console.out.println("ATTENTION! Using secured cloud");
-            cloud = new Cloud(new UUID(111, 222), signkey);
+        String signid = getSecurityId();
+        if (signid != null) {
+            Console.out.println("ATTENTION! Using secured cloud by id '"+signid+"'");
+            cloud = new Cloud(new UUID(111, 222), signid);
         }
         else {
             Console.out.println("Using open cloud :)");
@@ -36,13 +36,15 @@ public class Bootstrap {
         microservice = new LocalAgent(UUID.randomUUID());
     }
 
-    private static String getSecurityKey() {
-        String signkey = null;
+    private static String getSecurityId() {
+        String res = null;
         KeysStore keystore = Signer.DEFAULT_KEYSSTORE;
         if (!keystore.isEmpty()) {
-            signkey = keystore.get("test");
+            if (keystore.get("test") != null)
+                res = "test";
         }
-        return signkey;
+
+        return res;
     }
 
 }
