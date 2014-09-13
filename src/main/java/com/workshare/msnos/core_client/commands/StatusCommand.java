@@ -4,6 +4,7 @@ import com.workshare.msnos.core.Agent;
 import com.workshare.msnos.core.Cloud;
 import com.workshare.msnos.core.LocalAgent;
 import com.workshare.msnos.core.RemoteAgent;
+import com.workshare.msnos.core.RemoteEntity;
 import com.workshare.msnos.core_client.Bootstrap;
 import com.workshare.msnos.core_client.Command;
 
@@ -32,7 +33,7 @@ public class StatusCommand implements Command {
             }
             final Collection<RemoteAgent> remoteAgents = grid.getRemoteAgents();
             System.out.println("  " + "Remote Agents: " + remoteAgents.size());
-            for (RemoteAgent agent : remoteAgents) {
+            for (RemoteEntity agent : remoteAgents) {
                 System.out.println("    " + agent);
             }
         } finally {
