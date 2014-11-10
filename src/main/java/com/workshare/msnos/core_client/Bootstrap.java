@@ -11,14 +11,14 @@ import com.workshare.msnos.core.security.Signer;
 public class Bootstrap {
 
     private static Cloud cloud;
-    private static LocalAgent microservice;
+    private static LocalAgent agent;
 
     public static Cloud grid() throws IOException {
         return cloud;
     }
 
     public static LocalAgent agent() throws IOException {
-        return microservice;
+        return agent;
     }
 
     public static void init() throws IOException {
@@ -33,7 +33,7 @@ public class Bootstrap {
             cloud = new Cloud(new UUID(111, 222));
         }
 
-        microservice = new LocalAgent(UUID.randomUUID());
+        agent = new LocalAgent(UUID.randomUUID());
     }
 
     private static String getSecurityId() {
