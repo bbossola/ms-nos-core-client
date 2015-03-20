@@ -1,10 +1,15 @@
 package com.workshare.msnos.core_client;
 
-import com.workshare.msnos.core_client.commands.*;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.workshare.msnos.core_client.commands.ExitCommand;
+import com.workshare.msnos.core_client.commands.JoinCommand;
+import com.workshare.msnos.core_client.commands.LeaveCommand;
+import com.workshare.msnos.core_client.commands.LogLevelControlCommand;
+import com.workshare.msnos.core_client.commands.PingCommand;
+import com.workshare.msnos.core_client.commands.StatusCommand;
 
 public class Main {
 
@@ -15,7 +20,6 @@ public class Main {
     private static final Logger logger = Logger.getLogger("com.gridprobe");
 
     public static Command[] commands = {
-            new InvalidCommand(),
             new StatusCommand(),
             new JoinCommand(),
             new LeaveCommand(),
@@ -60,7 +64,7 @@ public class Main {
 
     private void showMenu() {
         System.out.println();
-        for (int i = 1; i < commands.length; i++) {
+        for (int i = 0; i < commands.length; i++) {
             System.out.printf("%d) %s\n", i, commands[i].description());
         }
 
