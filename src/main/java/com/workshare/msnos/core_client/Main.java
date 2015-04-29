@@ -7,15 +7,11 @@ import java.util.logging.Logger;
 import com.workshare.msnos.core_client.commands.ExitCommand;
 import com.workshare.msnos.core_client.commands.JoinCommand;
 import com.workshare.msnos.core_client.commands.LeaveCommand;
-import com.workshare.msnos.core_client.commands.LogLevelControlCommand;
+import com.workshare.msnos.core_client.commands.LogControl;
 import com.workshare.msnos.core_client.commands.PingCommand;
 import com.workshare.msnos.core_client.commands.StatusCommand;
 
 public class Main {
-
-    static {
-        LogLevelControlCommand.setCurrentLevel(Level.INFO);
-    }
 
     private static final Logger logger = Logger.getLogger("com.gridprobe");
 
@@ -24,7 +20,8 @@ public class Main {
             new JoinCommand(),
             new LeaveCommand(),
             new PingCommand(),
-            new LogLevelControlCommand(),
+            new LogControl("routing"),
+            new LogControl("protocol"),
             new ExitCommand(),
     };
 
