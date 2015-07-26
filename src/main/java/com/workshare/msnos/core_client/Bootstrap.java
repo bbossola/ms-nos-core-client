@@ -25,11 +25,11 @@ public class Bootstrap {
         
         String signid = getSecurityId();
         if (signid != null) {
-            Console.out.println("ATTENTION! Using secured cloud by id '"+signid+"'");
+            SysConsole.out.println("ATTENTION! Using secured cloud by id '"+signid+"'");
             cloud = new Cloud(new UUID(111, 222), signid);
         }
         else {
-            Console.out.println("Using open cloud :)");
+            SysConsole.out.println("Using open cloud :)");
             cloud = new Cloud(new UUID(111, 222));
         }
 

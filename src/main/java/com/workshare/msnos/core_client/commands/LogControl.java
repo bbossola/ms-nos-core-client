@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import ch.qos.logback.classic.Level;
 
 import com.workshare.msnos.core_client.Command;
-import com.workshare.msnos.core_client.Console;
+import com.workshare.msnos.core_client.SysConsole;
 
 public class LogControl implements Command {
 
@@ -22,19 +22,19 @@ public class LogControl implements Command {
 
 	@Override
 	public void execute() throws Exception {
-		Console.out.printf("Current level: %s\n", toString(getCurrentLevel()));
-		Console.out.printf("New level? [e]rr/[w]ar/[i]nf/[d]eb ");
+		SysConsole.out.printf("Current level: %s\n", toString(getCurrentLevel()));
+		SysConsole.out.printf("New level? [e]rr/[w]ar/[i]nf/[d]eb ");
 		
-		String line = Console.in.readLine();
+		String line = SysConsole.in.readLine();
 		Level level = fromString(line);
 		
 		if (level != null) {
 			setCurrentLevel(level);
-			Console.out.printf("New level: %s\n",toString(level));
-            Console.out.println();
+			SysConsole.out.printf("New level: %s\n",toString(level));
+            SysConsole.out.println();
 		}
 		else
-			Console.out.println("Level unchanged");
+			SysConsole.out.println("Level unchanged");
 	}
 
 	public Level getCurrentLevel() {

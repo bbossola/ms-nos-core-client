@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import com.workshare.msnos.core_client.commands.ExitCommand;
 import com.workshare.msnos.core_client.commands.JoinCommand;
 import com.workshare.msnos.core_client.commands.LeaveCommand;
+import com.workshare.msnos.core_client.commands.ListEndpointsCommand;
 import com.workshare.msnos.core_client.commands.LogControl;
 import com.workshare.msnos.core_client.commands.PingCommand;
 import com.workshare.msnos.core_client.commands.StatusCommand;
@@ -20,6 +21,7 @@ public class Main {
             new JoinCommand(),
             new LeaveCommand(),
             new PingCommand(),
+            new ListEndpointsCommand(),
             new LogControl("routing"),
             new LogControl("protocol"),
             new ExitCommand(),
@@ -46,7 +48,7 @@ public class Main {
     }
 
     private Command command() throws IOException {
-        String line = Console.in.readLine();
+        String line = SysConsole.in.readLine();
 
         Command result;
         try {
